@@ -1,0 +1,70 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.4.0-rc02'
+        
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+/**
+ * 配置组件化
+ */
+plugins {
+    id "calces.appconfig" version "3.3.0-alpha01"
+}
+
+/**
+ * 引入配置文件
+ */
+apply from:"config.gradle"
+
+/**
+ * 配置组件化
+ */
+appConfig {
+    debugEnable true
+    apps {
+        app {
+            mainActivity "com.example.level3_second.MainActivity"
+            modules ':user'
+        }
+    }
+
+    modules {
+        command {
+            name ':command'
+            applicationId "com.example.command"
+            mainActivity ".Modules1Activity"
+            isRunAlone false
+        }
+
+        user {
+            name ':user'
+            applicationId "com.example.user"
+            mainActivity ".MainActivity"
+            isRunAlone true
+        }
+    }
+}
+
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
