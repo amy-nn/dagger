@@ -12,6 +12,15 @@ android {
         versionCode androidConfig.versionCode
         versionName androidConfig.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        /**
+         * Arouter配置
+         */
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
     buildTypes {
         release {
@@ -23,9 +32,14 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:28.+'
+    implementation rootProject.ext.libCode.anroieSupport
     implementation 'com.android.support.constraint:constraint-layout:2.0.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //arouter注解用来跳转
+    annotationProcessor rootProject.ext.libCode.arouterAnotation
+
+    implementation project(path:':command')
 }
