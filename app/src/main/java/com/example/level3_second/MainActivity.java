@@ -6,20 +6,35 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.facade.callback.NavigationCallback;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.commend.path.Constract;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class MainActivity extends AppCompatActivity {
 
+    @BindView(R.id.btn_knife)
+    public Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ButterKnife.bind(this);
+
+    }
+
+    @OnClick(R.id.btn_knife)
+    public void btnClick(View view){
+        Log.d("amy", "btnClick: "+"点击了");
     }
 
     public void onClick(View view) {
@@ -47,30 +62,31 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_arouter5:
                 //拦截器
-//                ARouter.getInstance().build(Constract.appActivity).navigation(this,
-//                        new NavigationCallback() {
-//                            @Override
-//                            public void onFound(Postcard postcard) {
-//
-//                            }
-//
-//                            @Override
-//                            public void onLost(Postcard postcard) {
-//
-//                            }
-//
-//                            @Override
-//                            public void onArrival(Postcard postcard) {
-//
-//                            }
-//
-//                            @Override
-//                            public void onInterrupt(Postcard postcard) {
-//                                Log.d("amy", "onInterrupt: 拦截了");
-//                            }
-//                        });
+                ARouter.getInstance().build(Constract.appActivity).navigation(this,
+                        new NavigationCallback() {
+                            @Override
+                            public void onFound(Postcard postcard) {
 
-                ARouter.getInstance().build(Constract.appActivity).greenChannel().navigation();
+                            }
+
+                            @Override
+                            public void onLost(Postcard postcard) {
+
+                            }
+
+                            @Override
+                            public void onArrival(Postcard postcard) {
+
+                            }
+
+                            @Override
+                            public void onInterrupt(Postcard postcard) {
+                                Log.d("amy", "onInterrupt: 拦截了");
+                            }
+                        });
+
+                //绿色通信 可以屏蔽拦截
+//                ARouter.getInstance().build(Constract.appActivity).greenChannel().navigation();
                 break;
             case R.id.btn_arouter6:
                 FragmentOne fragmentOne = (FragmentOne) ARouter.getInstance().build(Constract.fragmentOne).navigation();

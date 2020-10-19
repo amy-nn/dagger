@@ -17,6 +17,8 @@ ext {
         anroieSupport:'com.android.support:appcompat-v7:28.+',
         arouterLib:'com.alibaba:arouter-api:1.5.0',
         arouterAnotation:'com.alibaba:arouter-compiler:1.2.2',
-        gson:'com.google.code.gson:gson:2.8.2'
+        gson:'com.google.code.gson:gson:2.8.2',
+        butterknife:'com.jakewharton:butterknife:8.6.0'
+
     ]
 }

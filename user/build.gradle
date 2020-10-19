@@ -1,6 +1,8 @@
 //apply plugin: 'com.android.library'
 //组件化
 apply plugin: 'calces.modules'
+apply plugin: 'com.jakewharton.butterknife'
+
 
 def androidConfig = rootProject.ext.android
 
@@ -61,4 +63,6 @@ dependencies {
 
     //arouter注解用来跳转
     annotationProcessor rootProject.ext.libCode.arouterAnotation
+    //butterknife框架
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
 }

@@ -49,4 +49,10 @@
         android:text="引入fragment"
         android:onClick="onClick"/>
 
+    <Button
+        android:id="@+id/btn_knife"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="butterknife测试"/>
+
 </LinearLayout>

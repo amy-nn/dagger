@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">user</string>
+    <string name="userModule">user模块</string>
 </resources>

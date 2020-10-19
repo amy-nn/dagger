@@ -47,6 +47,11 @@ dependencies {
     api rootProject.ext.libCode.arouterLib
     api rootProject.ext.libCode.gson
 
+    /**
+     * butterknife依赖
+     */
+    api rootProject.ext.libCode.butterknife
+
 
 
 }

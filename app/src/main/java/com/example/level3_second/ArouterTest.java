@@ -25,11 +25,9 @@ public class ArouterTest extends AppCompatActivity {
 
         //接收值必须加此句
         ARouter.getInstance().inject(this);
-
         Log.d("amy", "kv: "+kv);
 
         if(userinfo != null)
             Log.d("amy", "user: "+userinfo.toString());
-
     }
 }
