@@ -54,6 +54,13 @@ appConfig {
             mainActivity ".MainActivity"
             isRunAlone true
         }
+
+        dagger{
+            name':dagger'
+            applicationId"com.example.dagger"
+            mainActivity".MainActivity"
+            isRunAlone true
+        }
     }
 }
 

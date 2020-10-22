@@ -1,1 +1,1 @@
-include ':app', ':command', ':user'
+include ':app', ':command', ':user', ':dagger'
